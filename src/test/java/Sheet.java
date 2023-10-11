@@ -19,7 +19,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Sheet {
-
+    
     private static Sheets sheetData;
     private static String ApplicationName = "Extract-data-from-sheet";
     private static String SheetId = "1jNX0daEEoKcAkUi0NwmEibIHOoryOzozfSak2n89ymQ";
@@ -55,11 +55,13 @@ public class Sheet {
                 .execute();
 // setup all the data in sheetData variable.
         //check the data in sheet using values variable.
+        // values == null: Checks if the values variable is null.
+
         List<List<Object>> values = response.getValues();
         if (values == null || values.isEmpty()) {
-            System.out.println("No data");
+            System.out.println("No values");
         } else {
-            System.out.println(values);
+            System.out.println(data);
             for (List row : values) {
                 System.out.printf("%s -- %s -- %s -- %s\n", row.get(0), row.get(1), row.get(2), row.get(3));
             }
